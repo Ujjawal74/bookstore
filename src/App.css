@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Georgia, "Times New Roman", Times, serif;
+}
+
+/* circular gradient for percentage */
+.rating {
+  height: 30px;
+  width: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: conic-gradient(hotpink 270deg, #eee 0deg);
+  color: #000;
+}
+
+.rating .hollow {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
