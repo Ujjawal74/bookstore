@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // const API_URL = "http://localhost:5000";
-const API_URL = "http://ujjawal74.pythonanywhere.com";
+const API_URL = "https://ujjawal74.pythonanywhere.com";
 
 function App() {
   const initialBook = {
