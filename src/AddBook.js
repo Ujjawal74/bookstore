@@ -127,7 +127,7 @@ const AddBook = ({ handleInputChange, fileHandler, handleSubmit }) => {
             type="button"
             className="btn btn-outline-success"
           >
-            Success
+            Add Book
           </button>
         </div>
       </div>
