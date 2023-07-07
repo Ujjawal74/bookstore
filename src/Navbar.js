@@ -60,7 +60,7 @@ const Navbar = ({ handleSearchInput }) => {
               <input
                 className="form-control me-2"
                 type="search"
-                placeholder="Search (Accepts Starts With - Title)"
+                placeholder="Search Title, Genre or Author"
                 aria-label="Search"
                 onChange={handleSearchInput}
               />
