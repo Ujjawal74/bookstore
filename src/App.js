@@ -165,7 +165,7 @@ function App() {
   // on entering a word in search box if word is starts with that query
   const handleSearchInput = async (e) => {
     let url = `${API_URL}/search`;
-    if (e.target.value == "") {
+    if (e.target.value === "") {
       getData();
     }
     let res = await postReq(url, { query: e.target.value });
