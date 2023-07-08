@@ -39,7 +39,7 @@ const BookDetails = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [book]);
 
   return (
     <>
