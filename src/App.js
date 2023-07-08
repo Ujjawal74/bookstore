@@ -42,6 +42,8 @@ function App() {
   // first initial call [component_did_mount]
   useEffect(() => {
     getData();
+    // its callback can not made async
+    // try to include the function definition inside if not using outside
   }, []);
 
   // handling input fields of form

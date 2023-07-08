@@ -22,29 +22,28 @@ const BookDetails = () => {
   const [book, setBook] = useState(sample);
   const { id } = useParams();
 
-  const fetchData = async () => {
-    try {
-      let url = `${API_URL}/get/${id}`;
-      const res = await fetch(url);
-      const data = await res.json();
-      if (data.status === "error") {
-        navigate(-1);
-      }
-      const { book } = data;
-      setBook(book);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        let url = `${API_URL}/get/${id}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        if (data.status === "error") {
+          navigate(-1);
+        }
+        const { book } = data;
+        setBook(book);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     fetchData();
   }, []);
 
   return (
     <>
       <div className="card mx-md-5" style={{ width: "18rem" }}>
-        <img className="card-img-top" src={book.cover} alt="Card image cap" />
+        <img className="card-img-top" src={book.cover} alt="cover" />
         <div className="card-body">
           <h5 className="card-title">{book.title}</h5>
           <p className="card-text">{book.description}</p>
