@@ -27,7 +27,7 @@ const BookDetails = () => {
       let url = `${API_URL}/get/${id}`;
       const res = await fetch(url);
       const data = await res.json();
-      if (data.status == "error") {
+      if (data.status === "error") {
         navigate(-1);
       }
       const { book } = data;
