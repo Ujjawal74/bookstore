@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Card = ({ card }) => {
   let score = 3.6 * ((card.rating / 5) * 100);
 
@@ -16,7 +18,7 @@ const Card = ({ card }) => {
                 borderTopRightRadius: "15px",
               }}
               className="img-fluid"
-              alt="Laptop"
+              alt="Book"
             />
             <a href="#!">
               <div className="mask"></div>
@@ -26,9 +28,9 @@ const Card = ({ card }) => {
             <div className="d-flex justify-content-between">
               <div>
                 <p>
-                  <a href="#!" className="text-dark">
+                  <NavLink to={`/books/${card.id}`} className="text-dark">
                     {card.title}
-                  </a>
+                  </NavLink>
                 </p>
                 <p className="small text-muted">{card.genre}</p>
               </div>

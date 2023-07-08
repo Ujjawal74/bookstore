@@ -30,3 +30,12 @@
   align-items: center;
   font-size: 10px;
 }
+
+.error {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: crimson;
+}

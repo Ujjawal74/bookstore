@@ -8,6 +8,8 @@ import Books from "./Books";
 import ManageBooks from "./ManageBooks";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BookDetails from "./BookDetails";
+import Error from "./Error";
 
 // const API_URL = "http://localhost:5000";
 const API_URL = "https://ujjawal74.pythonanywhere.com";
@@ -68,6 +70,7 @@ function App() {
         ...book,
         cover: result.url,
       });
+      console.log(result);
     } catch (error) {
       console.log(error);
     }
@@ -174,9 +177,11 @@ function App() {
 
   // created routing with react-router-dom
   const router = createBrowserRouter([
+    // Navbar is parent of all
     {
       path: "/",
       element: <Navbar handleSearchInput={handleSearchInput} />,
+      errorElement: <Error />,
       children: [
         {
           index: true, // index == true nothing after slash
@@ -217,6 +222,21 @@ function App() {
               handleDelete={handleDelete}
             />
           ),
+        },
+        {
+          path: "books",
+          // element removed as we do not want to render chidren inside same page or to give outlet
+          children: [
+            {
+              index: true,
+              element: <Books booksFound={booksFound} />,
+            },
+            // books is common prefix of books/:id can be put as children of /books
+            {
+              path: ":id",
+              element: <BookDetails />,
+            },
+          ],
         },
       ],
     },
