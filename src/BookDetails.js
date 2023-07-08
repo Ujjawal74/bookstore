@@ -18,26 +18,25 @@ const BookDetails = () => {
   };
 
   const [book, setBook] = useState(sample);
+  // let navigate = useNavigate();
+  const { id } = useParams();
 
   useEffect(() => {
-    let navigate = useNavigate();
-    const { id } = useParams();
-
     const fetchData = async () => {
       try {
         let url = `${API_URL}/get/${id}`;
         const res = await fetch(url);
         const data = await res.json();
-        if (data.status === "error") {
-          navigate(-1);
-        }
+        // if (data.status === "error") {
+        //   navigate(-1);
+        // }
         setBook(data.book);
       } catch (error) {
         console.log(error);
       }
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <>
