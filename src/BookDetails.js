@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 const API_URL = "https://ujjawal74.pythonanywhere.com";
 
 const BookDetails = () => {
-  let navigate = useNavigate();
-
   let sample = {
     author: "Wait...",
     cover: "Wait...",
@@ -20,9 +18,11 @@ const BookDetails = () => {
   };
 
   const [book, setBook] = useState(sample);
-  const { id } = useParams();
 
   useEffect(() => {
+    let navigate = useNavigate();
+    const { id } = useParams();
+
     const fetchData = async () => {
       try {
         let url = `${API_URL}/get/${id}`;
@@ -37,7 +37,7 @@ const BookDetails = () => {
       }
     };
     fetchData();
-  }, [id]);
+  }, []);
 
   return (
     <>
