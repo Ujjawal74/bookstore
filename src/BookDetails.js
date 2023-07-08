@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 // const API_URL = "http://localhost:5000";
@@ -18,7 +18,7 @@ const BookDetails = () => {
   };
 
   const [book, setBook] = useState(sample);
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
@@ -27,9 +27,9 @@ const BookDetails = () => {
         let url = `${API_URL}/get/${id}`;
         const res = await fetch(url);
         const data = await res.json();
-        // if (data.status === "error") {
-        //   navigate(-1);
-        // }
+        if (data.status === "error") {
+          navigate(-1);
+        }
         setBook(data.book);
       } catch (error) {
         console.log(error);
