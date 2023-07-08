@@ -37,8 +37,7 @@ const BookDetails = () => {
       }
     };
     fetchData();
-    // eslint-disable-next-line no-use-before-define
-  }, []);
+  }, [id]);
 
   return (
     <>
