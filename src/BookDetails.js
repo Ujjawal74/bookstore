@@ -31,8 +31,7 @@ const BookDetails = () => {
         if (data.status === "error") {
           navigate(-1);
         }
-        const { book } = data;
-        setBook(book);
+        setBook(data.book);
       } catch (error) {
         console.log(error);
       }
