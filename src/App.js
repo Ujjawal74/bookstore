@@ -11,6 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 import BookDetails from "./BookDetails";
 import Error from "./Error";
 
+import { bookContext } from "./context";
+
 // const API_URL = "http://localhost:5000";
 const API_URL = "https://ujjawal74.pythonanywhere.com";
 
@@ -214,15 +216,15 @@ function App() {
         {
           path: "manage-books",
           element: (
-            <ManageBooks
-              book={book}
-              setBook={setBook}
-              booksFound={booksFound}
-              handleInputChange={handleInputChange}
-              fileHandler={fileHandler}
-              handleEdit={handleEdit}
-              handleDelete={handleDelete}
-            />
+            <bookContext.Provider
+              value={{ book, handleInputChange, fileHandler, handleEdit }}
+            >
+              <ManageBooks
+                setBook={setBook}
+                booksFound={booksFound}
+                handleDelete={handleDelete}
+              />
+            </bookContext.Provider>
           ),
         },
         {

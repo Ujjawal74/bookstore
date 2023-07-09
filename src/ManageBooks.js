@@ -1,14 +1,6 @@
 import EditModal from "./EditModal";
 
-const ManageBooks = ({
-  book,
-  setBook,
-  booksFound,
-  handleInputChange,
-  fileHandler,
-  handleEdit,
-  handleDelete,
-}) => {
+const ManageBooks = ({ setBook, booksFound, handleDelete }) => {
   const clickHandler = (item) => {
     setBook(item);
   };
@@ -39,14 +31,7 @@ const ManageBooks = ({
                   >
                     Edit
                   </button>
-                  <EditModal
-                    index={i}
-                    item={item}
-                    book={book}
-                    handleInputChange={handleInputChange}
-                    fileHandler={fileHandler}
-                    handleEdit={handleEdit}
-                  />
+                  <EditModal index={i} item={item} />
                   <button
                     onClick={() => handleDelete(item.id)}
                     type="button"

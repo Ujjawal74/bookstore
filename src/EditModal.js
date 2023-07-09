@@ -1,13 +1,10 @@
 import EditBook from "./EditBook";
+import { useContext } from "react";
+import { bookContext } from "./context";
 
-const EditModal = ({
-  index,
-  item,
-  book,
-  handleInputChange,
-  fileHandler,
-  handleEdit,
-}) => {
+const EditModal = ({ index, item }) => {
+  const { handleEdit } = useContext(bookContext);
+
   return (
     <>
       <div
@@ -34,11 +31,7 @@ const EditModal = ({
               </button>
             </div>
             <div className="modal-body">
-              <EditBook
-                book={book}
-                handleInputChange={handleInputChange}
-                fileHandler={fileHandler}
-              />
+              <EditBook />
             </div>
             <div className="modal-footer">
               <button

@@ -1,6 +1,9 @@
 import { ToastContainer } from "react-toastify";
+import { useContext } from "react";
+import { bookContext } from "./context";
 
-const EditBook = ({ book, handleInputChange, fileHandler }) => {
+const EditBook = () => {
+  const { book, handleInputChange, fileHandler } = useContext(bookContext);
   return (
     <>
       <div className="col-md-6 p-3">
